@@ -9,7 +9,7 @@ import tweepy
 import csv
 
 #既存護衛日データ確認
-path = './shikkin_data.csv'
+path = './shukkin_data.csv'
 is_file = os.path.isfile(path)
 if is_file:
     pass
