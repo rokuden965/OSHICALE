@@ -48,7 +48,7 @@ l_replace = [s.replace('n','') for s in l]
 #行列から「日」を除去
 goei = [s.replace('日','') for s in l_replace]
 #護衛日をCSVファイルに格納
-with open('shikkin_data', 'wt', encoding='utf-8') as f:
+with open('shukkin_data', 'wt', encoding='utf-8') as f:
     # ライター（書き込み者）を作成
     writer = csv.writer(f)
     # ライターでデータ（リスト）をファイルに出力
