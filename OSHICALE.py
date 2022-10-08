@@ -14,12 +14,12 @@ is_file = os.path.isfile(path)
 if is_file:
     pass
 else:
-    with open("./yshikkin_data.csv", "w")  as f:
+    with open("./shukkin_data.csv", "w")  as f:
         f.write("")
         f.close()
         pre_goei = []
 #既存護衛日データ読み込み
-with open("shikkin_data.csv") as f:
+with open("shukkin_data.csv") as f:
     reader = csv.reader(f)
     for pre_goei in reader:
         print("既存データ")
@@ -32,9 +32,9 @@ BEARER_TOKEN = '#########'
 ACCESS_TOKEN = '#########'
 ACCSESS_TOKEN_SECRET = '#########'
 
-#リファレンスの内容に沿って入力（https://docs.tweepy.org/en/stable/client.html）
+#Tweepyリファレンスの内容に沿って入力（https://docs.tweepy.org/en/stable/client.html）
 client = tweepy.Client(bearer_token = BEARER_TOKEN, consumer_key = API_KEY, consumer_secret = API_KEY_SECRET, access_token = ACCESS_TOKEN, access_token_secret = ACCSESS_TOKEN_SECRET)
-#出勤日を取得するユーザー名を指定
+#出勤日を取得するユーザー名を指定(@より右部分)
 input_username = '#####'
 #固定ツイートを取得
 pinned_tweet = client.get_user(username=input_username,expansions="pinned_tweet_id")
@@ -73,7 +73,7 @@ def calender(goei):
         time_end = str(dt.year)+"-"+str(dt.month)+"-"+day+"T23:00:00"
         #print(time_begin)
    
-        event= {
+        event = {
             # 予定のタイトル
             'summary': '###の出勤日',
             # 予定の開始時刻
@@ -99,5 +99,5 @@ print(goei)
 if pre_goei == goei:
     print("変化なし")
 else:
-    print("新規ツイートあり")
+    print("固定ツイートに変更あり")
     calender(goei)
