@@ -6,7 +6,9 @@ OSHICALE
 
 Tweepy
 
-Google-api-core
+google-api-python-client
 
-Google-auth-httplib2
+google-auth-httplib2
+
+google-auth-oauthlib
 
